@@ -8,6 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/inventory")
+@CrossOrigin(origins = "http://localhost:3000")
 public class InventoryController {
 
     private final InventoryRepository repository;
