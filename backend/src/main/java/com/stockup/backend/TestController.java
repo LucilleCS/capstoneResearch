@@ -2,12 +2,18 @@ package com.stockup.backend;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.stockup.backend.repository.InventoryRepository;
+
+import com.stockup.backend.model.Inventory;
 
 @RestController
 @RequestMapping("/api")
 @CrossOrigin(origins = "http://localhost:3000")
+
 public class TestController {
 
     @GetMapping("/hello")
@@ -18,5 +24,10 @@ public class TestController {
     @GetMapping("/inventory")
     public String inventory() {
         return "Milk - 3 cases - Low stock, Bread - 12 cases - In stock";
+    }
+
+    @PostMapping
+    public Inventory addInventory(@RequestBody Inventory inventory) {
+        return repository.save(inventory);
     }
 }

@@ -21,4 +21,9 @@ public class InventoryController {
     public List<Inventory> getInventory() {
         return repository.findAll();
     }
+
+    @PostMapping
+    public Inventory addInventory(@RequestBody Inventory inventory) {
+        return repository.save(inventory);
+    }
 }
