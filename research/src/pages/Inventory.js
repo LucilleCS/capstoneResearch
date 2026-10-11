@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "../cssFiles/Inventory.css";
+import "../cssFiles/navBar.css";
 import { useEffect, useState } from "react";
 
 const Inventory = () => {
