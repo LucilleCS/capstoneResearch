@@ -14,4 +14,9 @@ public class TestController {
     public String hello() {
         return "Hello from Spring Boot!";
     }
+
+    @GetMapping("/inventory")
+    public String inventory() {
+        return "Milk - 3 cases - Low stock, Bread - 12 cases - In stock";
+    }
 }
